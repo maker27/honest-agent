@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 const config: webpack.Configuration = {
     mode: 'production',
@@ -70,7 +71,8 @@ const config: webpack.Configuration = {
         new ESLintPlugin({
             extensions: ['js', 'jsx', 'ts', 'tsx']
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new Dotenv()
     ]
 };
 

@@ -952,7 +952,7 @@
     "@babel/helper-validator-option" "^7.16.7"
     "@babel/plugin-transform-typescript" "^7.17.12"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.18.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
   integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
@@ -1153,6 +1153,15 @@
   dependencies:
     "@types/node" "*"
 
+"@types/dotenv-webpack@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@types/dotenv-webpack/-/dotenv-webpack-7.0.3.tgz#43eaf6a2ee6161e9c79d58c3704d4a1a054e6082"
+  integrity sha512-NGmfRWp/5hTnnhl4glRbgQhtpJeVN8EUafxvOjVSEKiq8WCcfCH4MyiwRYHspwbIL9Ke+bptp3uTfBHiYIhEWw==
+  dependencies:
+    "@types/node" "*"
+    tapable "^2.2.0"
+    webpack "^5"
+
 "@types/eslint-scope@^3.7.3":
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-3.7.3.tgz#125b88504b61e3c8bc6f870882003253005c3224"
@@ -1320,6 +1329,11 @@
   integrity sha512-0yeUr92L3r0GLRnBOvtYK1v2SjqMIqQDHMl7GLb+l2L8+6LSFWEEWEIgVsPdMn5ImLM8qzWT8xFPtQYpp8co0g==
   dependencies:
     source-map "^0.6.1"
+
+"@types/use-sync-external-store@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
+  integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
 
 "@types/webpack-dev-server@^3.11.1":
   version "3.11.6"
@@ -2616,6 +2630,25 @@ dot-case@^3.0.4:
   dependencies:
     no-case "^3.0.4"
     tslib "^2.0.3"
+
+dotenv-defaults@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/dotenv-defaults/-/dotenv-defaults-2.0.2.tgz#6b3ec2e4319aafb70940abda72d3856770ee77ac"
+  integrity sha512-iOIzovWfsUHU91L5i8bJce3NYK5JXeAwH50Jh6+ARUdLiiGlYWfGw6UkzsYqaXZH/hjE/eCd/PlfM/qqyK0AMg==
+  dependencies:
+    dotenv "^8.2.0"
+
+dotenv-webpack@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-7.1.0.tgz#211fefac6bf500bf3bb66b286e1b12a23a2a70c0"
+  integrity sha512-+aUOe+nqgLerA/n611oyC15fY79BIkGm2fOxJAcHDonMZ7AtDpnzv/Oe591eHAenIE0t6w03UyxDnLs/YUxx5Q==
+  dependencies:
+    dotenv-defaults "^2.0.2"
+
+dotenv@^8.2.0:
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
+  integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -6273,7 +6306,7 @@ webpack-sources@^3.2.3:
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
-webpack@^5.11.1:
+webpack@^5, webpack@^5.11.1:
   version "5.73.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.73.0.tgz#bbd17738f8a53ee5760ea2f59dce7f3431d35d38"
   integrity sha512-svjudQRPPa0YiOYa2lM/Gacw0r6PvxptHj4FuEKQ2kX05ZLkjbVc5MnPs6its5j7IZljnIqSVo/OsY2X0IpHGA==
