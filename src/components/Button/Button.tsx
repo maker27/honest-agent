@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Button.scss';
-import AddIcon from './AddIcon';
+import { AddIcon } from '../icons';
 
 interface ButtonProps {
     text: string;
@@ -10,7 +10,9 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ text }) => {
     return (
         <div className="button">
-            <AddIcon />
+            <span className="button__icon">
+                <AddIcon />
+            </span>
             <span className="button__text">{text}</span>
         </div>
     );

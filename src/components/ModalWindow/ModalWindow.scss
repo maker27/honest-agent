@@ -1,3 +1,5 @@
+@import "../../sass/_variables.scss";
+
 .modal-window {
     display: flex;
     flex-direction: column;
@@ -40,7 +42,7 @@
             color: #b9b9b9;
         }
         &_delete {
-            color: #82b284;
+            color: $green-light;
         }
     }
 }

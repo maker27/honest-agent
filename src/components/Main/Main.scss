@@ -1,0 +1,74 @@
+@import "../../sass/_variables.scss";
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    &__header,
+    &__content,
+    &__footer {
+        padding: 0 40px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 72px;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    &__title {
+        display: flex;
+        gap: 12px;
+        margin: 24px 0;
+        font-size: 20px;
+        line-height: 24px;
+        color: #222222;
+    }
+
+    &__content {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    &__section {
+        margin-bottom: 32px;
+    }
+
+    &__footer {
+        margin-bottom: 60px;
+    }
+}
+
+.header {
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 16px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: $green-light;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 24px;
+    }
+}
+
+.footer {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #b9b9b9;
+
+    &__copyright {
+        margin-bottom: 16px;
+    }
+}

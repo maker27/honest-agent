@@ -1,4 +1,5 @@
 @import "fonts";
+@import "variables";
 
 *,
 *:before,
@@ -16,4 +17,16 @@ input {
 body {
     font-family: "Proxima Nova", sans-serif;
     font-weight: 400;
+    background: #ffffff;
+}
+
+a {
+    color: $green-light;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
 }
