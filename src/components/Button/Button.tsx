@@ -5,11 +5,12 @@ import { AddIcon } from '../icons';
 
 interface ButtonProps {
     text: string;
+    onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
+const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
     return (
-        <div className="button">
+        <div className="button" onClick={onClick}>
             <span className="button__icon">
                 <AddIcon />
             </span>
