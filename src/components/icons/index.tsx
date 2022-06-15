@@ -10,6 +10,7 @@ import HomeIcon from './HomeIcon';
 import LinkedIcon from './LinkedIcon';
 import MarketIcon from './MarketIcon';
 import RotationIcon from './RotationIcon';
+import SaveIcon from './SaveIcon';
 import SearchIcon from './SearchIcon';
 import SettingsIcon from './SettingsIcon';
 
@@ -26,6 +27,7 @@ export {
     LinkedIcon,
     MarketIcon,
     RotationIcon,
+    SaveIcon,
     SearchIcon,
     SettingsIcon
 };
