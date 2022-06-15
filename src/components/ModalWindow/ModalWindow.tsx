@@ -1,21 +1,47 @@
 import React from 'react';
 
 import './ModalWindow.scss';
+import clsx from 'clsx';
 
-const ModalWindow: React.FC = () => {
+export interface ModalWindowProps {
+    title: string;
+    secondButton?: string;
+    onClose: () => void;
+    onAccept?: () => void;
+}
+
+const ModalWindow: React.FC<ModalWindowProps> = ({
+    title,
+    children,
+    secondButton,
+    onClose,
+    onAccept
+}) => {
     return (
-        <div className="modal-window">
-            <div className="modal-window__header">Удалить карточку</div>
-            <div className="modal-window__content">
-                Отправить карточку организации в архив?
-            </div>
-            <div className="modal-window__buttons">
-                <div className="modal-window__button modal-window__button_cancel">
-                    Отмена
+        <div className="modal__window">
+            <div className="modal__header">{title}</div>
+            <div className="modal__content">{children}</div>
+            <div className="modal__buttons">
+                <div
+                    className={clsx(
+                        'modal__button',
+                        secondButton
+                            ? 'modal__button_cancel'
+                            : 'modal__button_ok'
+                    )}
+                    onClick={onClose}>
+                    {secondButton ? 'Отмена' : 'ОК'}
                 </div>
-                <div className="modal-window__button modal-window__button_delete">
-                    Удалить
-                </div>
+                {secondButton && onAccept && (
+                    <div
+                        className="modal__button modal__button_accept"
+                        onClick={() => {
+                            onAccept();
+                            onClose();
+                        }}>
+                        {secondButton}
+                    </div>
+                )}
             </div>
         </div>
     );
