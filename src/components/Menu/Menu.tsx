@@ -27,6 +27,7 @@ const Menu: React.FC<ClassNameProps> = ({ className }) => {
                     <SearchIcon />
                 </MenuItem>
             </div>
+
             <div className="menu__lower">
                 <MenuItem>
                     <SettingsIcon />
