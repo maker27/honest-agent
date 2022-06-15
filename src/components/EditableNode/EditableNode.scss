@@ -1,0 +1,21 @@
+@import "../../sass/_variables.scss";
+
+.editable-node {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    &:not(.editable-node_changed) svg {
+        opacity: 0.3;
+        fill: grey;
+    }
+
+    &_changed svg {
+        opacity: 1;
+    }
+}
