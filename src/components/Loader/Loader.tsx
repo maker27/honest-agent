@@ -1,11 +1,16 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import './Loader.scss';
 import { RotationIcon } from '../icons';
 
-const Loader: React.FC = () => {
+interface LoaderProps {
+    inline?: boolean;
+}
+
+const Loader: React.FC<LoaderProps> = ({ inline }) => {
     return (
-        <div className="loader">
+        <div className={clsx('loader', inline && 'loader_inline')}>
             <RotationIcon />
             <div className="loader__label"></div>
         </div>
