@@ -2,16 +2,16 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
 
-    &__row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 14px;
-        line-height: 20px;
-    }
+.record {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 20px;
 
-    &__element {
+    &__name {
         flex: 0 1 150px;
         font-weight: 300;
 
