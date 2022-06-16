@@ -25,10 +25,7 @@ interface UseCompanyResult {
     onDelete: () => void;
 }
 
-const useCompany = (
-    companyId: CompanyId,
-    onError: (error: ApiError) => void
-): UseCompanyResult => {
+const useCompany = (companyId: CompanyId): UseCompanyResult => {
     const company = useSelector(selectCompany);
     const [isLoading, error] = useSelector(selectCompanyState);
 
@@ -40,6 +37,9 @@ const useCompany = (
             .unwrap()
             .then(newCompany => {
                 updateContacts(newCompany.contactId);
+            })
+            .catch(() => {
+                console.warn('Error was already handled in extraReducer');
             });
     }, [companyId, loadCompany, updateContacts]);
 
@@ -47,11 +47,7 @@ const useCompany = (
         onUpdate();
     }, [companyId, loadCompany, onUpdate]);
 
-    const [editCompany, { error: editingError }] = useEditCompanyMutation();
-
-    useEffect(() => {
-        if (editingError) onError(editingError as ApiError);
-    }, [onError, editingError]);
+    const [editCompany] = useEditCompanyMutation();
 
     const [deleteCompany] = useDeleteCompanyMutation();
 
