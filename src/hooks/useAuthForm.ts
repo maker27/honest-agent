@@ -12,9 +12,11 @@ interface UseAuthFormResult {
 
 const useAuthForm = (): UseAuthFormResult => {
     const userInputRef = useRef<HTMLInputElement>(null);
+
     const [error, setError] = useState('');
 
     const dispatch = useDispatch();
+
     const [getToken] = useLazyGetTokenQuery();
 
     const onAuth = useCallback(() => {

@@ -1,15 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import './sass/global.scss';
 import OrganizationPage from './pages/OrganizationPage';
-import { selectAuth } from './store/authSlice';
 import AuthPage from './pages/AuthPage';
 import Loader from './components/Loader';
 import ErrorMessage from './components/ErrorMessage';
+import useAuth from './hooks/useAuth';
 
 const App: React.FC = () => {
-    const { loading, error, token } = useSelector(selectAuth);
+    const { loading, error, token } = useAuth();
 
     if (loading) {
         return <Loader />;
