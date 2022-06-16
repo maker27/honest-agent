@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 
-import Section, { Record, Records } from '../Section';
+import Records, { Record } from '../Records';
+import Section from '../Section';
 import {
     companyTypeView,
     convertDateStringToISO,

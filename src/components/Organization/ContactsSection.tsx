@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
-import Section, { Record, Records } from '../Section';
+import Records, { Record } from '../Records';
+import Section from '../Section';
 import { ContactsProperties, StringObject, UpdatedContacts } from '../../types';
 import { emailView, phoneView } from '../../utils';
 import { EditableNode, EditableToggler } from '../EditableNode';
