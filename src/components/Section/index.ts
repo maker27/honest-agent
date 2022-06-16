@@ -1,4 +1,5 @@
 import Section from './Section';
-import Records from './Records';
-export { Records };
+import Records, { Record } from '../Records/Records';
+
+export { Record, Records };
 export default Section;
