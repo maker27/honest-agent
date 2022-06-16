@@ -1,4 +1,5 @@
 @import "../../sass/_variables.scss";
+@import "../../sass/_mixins.scss";
 
 .menu {
     display: flex;
@@ -7,13 +8,35 @@
     width: 48px;
     background: $green-light;
 
+    @include width-600 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: auto;
+        flex: 0 0 48px;
+    }
+
+    &__upper,
     &__lower {
-        &:before {
+        display: flex;
+        flex-direction: column;
+
+        @include width-600 {
+            flex-direction: row;
+        }
+    }
+
+    &__lower {
+        &::before {
             content: "";
             display: block;
             width: 32px;
-            margin: 0 auto;
+            margin: auto;
             border: 1px solid #b9b9b9;
+
+            @include width-600 {
+                width: 0;
+                height: 32px;
+            }
         }
     }
 
@@ -23,6 +46,10 @@
         height: 60px;
         justify-content: center;
         align-items: center;
+
+        @include width-600 {
+            height: 48px;
+        }
 
         svg {
             width: 20px;

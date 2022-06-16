@@ -4,7 +4,7 @@
     position: relative;
     background: #f7f7f7;
 
-    &:after {
+    &::after {
         content: "";
         position: absolute;
         top: 0;

@@ -58,7 +58,7 @@ const ImagesList: React.FC<ImagesListProps> = ({ images, onImageClick }) => {
         <div className="images-list">
             {images.map(image => (
                 <Image
-                    key={image.name}
+                    key={image.filepath}
                     image={image}
                     onClick={onImageClick(image.name)}
                     openOnFullScreen={openOnFullScreen}

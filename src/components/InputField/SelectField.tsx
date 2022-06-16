@@ -33,6 +33,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
                 value={value}
                 options={options}
                 onChange={onChange}
+                noOptionsMessage={() => 'Нет доступных значений'}
             />
         </div>
     );
