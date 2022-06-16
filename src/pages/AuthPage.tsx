@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './AuthPage.scss';
-import { UncontrolledTextField } from '../components/TextField';
+import { UncontrolledTextField } from '../components/InputField';
 import Button from '../components/Button';
 import useAuthForm from '../hooks/useAuthForm';
 import ErrorMessage from '../components/ErrorMessage';

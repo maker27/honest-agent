@@ -2,14 +2,23 @@ import React, { useCallback, useMemo } from 'react';
 
 import Section, { Record, Records } from '../Section';
 import {
+    companyTypeView,
     convertDateStringToISO,
     convertISOToDateString,
+    convertToSelectOptions,
     dateView
 } from '../../utils';
 import { companyTypes } from '../../constants';
-import { CompanyProperties, StringObject, UpdatedCompany } from '../../types';
+import {
+    CompanyProperties,
+    CompanyType,
+    StringObject,
+    UpdatedCompany
+} from '../../types';
 import { EditableNode, EditableToggler } from '../EditableNode';
 import useEditableNode from '../../hooks/useEditableNode';
+import EditableSelectNode from '../EditableNode/EditableSelectNode';
+import { SelectOption } from '../InputField';
 
 interface SummarySectionProps {
     company: UpdatedCompany;
@@ -43,7 +52,22 @@ const SummarySection: React.FC<SummarySectionProps> = ({ company, onEdit }) => {
         onChange
     ]);
 
-    const onChangeType = useMemo(() => onChange('type'), [onChange]);
+    const typeValues = useMemo(() => convertToSelectOptions(company.type), [
+        company.type
+    ]);
+
+    const typeOptions = useMemo(
+        () =>
+            convertToSelectOptions(Object.keys(companyTypes) as CompanyType[]),
+        []
+    );
+
+    const onChangeType = useCallback(
+        values => {
+            onChange('type')(values.map(({ value }: SelectOption) => value));
+        },
+        [onChange]
+    );
 
     return (
         <Section
@@ -90,11 +114,11 @@ const SummarySection: React.FC<SummarySectionProps> = ({ company, onEdit }) => {
                     />
                 </Record>
                 <Record key="type" name="Тип">
-                    <EditableNode
-                        value={company.type
-                            .map(type => companyTypes[type])
-                            .join(', ')}
+                    <EditableSelectNode
+                        options={typeOptions}
+                        value={typeValues}
                         editMode={editMode}
+                        viewerFn={companyTypeView}
                         changeValue={onChangeType}
                     />
                 </Record>

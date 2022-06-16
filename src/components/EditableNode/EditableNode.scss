@@ -5,17 +5,17 @@
     align-items: center;
     gap: 10px;
 
-    svg {
+    .icon-button svg {
         width: 32px;
         height: 32px;
     }
 
-    &:not(.editable-node_changed) svg {
+    &:not(.editable-node_changed) .icon-button svg {
         opacity: 0.3;
         fill: grey;
     }
 
-    &_changed svg {
+    &_changed .icon-button svg {
         opacity: 1;
     }
 }

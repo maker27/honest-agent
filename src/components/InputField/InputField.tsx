@@ -1,19 +1,19 @@
 import React, { useCallback } from 'react';
 
-import './TextField.scss';
+import './InputField.scss';
 
-export interface CommonTextFieldProps {
+export interface CommonInputProps {
     type?: 'text' | 'password' | 'date';
     placeholder?: string;
 }
 
-interface ControlledTextFieldProps extends CommonTextFieldProps {
+interface ControlledInputFieldProps extends CommonInputProps {
     value: string;
     onChange: React.ChangeEventHandler<HTMLInputElement>;
     onEnter?: () => void;
 }
 
-const TextField: React.FC<ControlledTextFieldProps> = ({
+const InputField: React.FC<ControlledInputFieldProps> = ({
     value,
     placeholder,
     type = 'text',
@@ -28,18 +28,18 @@ const TextField: React.FC<ControlledTextFieldProps> = ({
     );
 
     return (
-        <div className="text-field">
+        <div className="input-field">
             <input
-                className="text-field__input"
+                className="input-field__input"
                 type={type}
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
                 onKeyDown={onKeyDown}
             />
-            <span className="text-field__label">{placeholder}</span>
+            <span className="input-field__label">{placeholder}</span>
         </div>
     );
 };
 
-export default React.memo(TextField);
+export default React.memo(InputField);

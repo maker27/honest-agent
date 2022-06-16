@@ -2,33 +2,30 @@ import React, { useCallback, useState } from 'react';
 import clsx from 'clsx';
 
 import './EditableNode.scss';
-import TextField, { CommonInputProps } from '../InputField';
+import { SelectField, SelectOption, SelectValue } from '../InputField';
 import IconButton from '../IconButton';
 import { SaveIcon } from '../icons';
 
 interface EditableNodeProps {
-    value: string;
-    inputType?: CommonInputProps['type'];
+    value: SelectValue;
+    options: SelectOption[];
     editMode: boolean;
-    changeValue: (editedValue: string) => void;
-    viewerFn?: (value: string) => React.ReactNode | string;
+    changeValue: (editedValue: SelectValue) => void;
+    viewerFn?: (value: SelectValue) => React.ReactNode | string;
 }
 
 const EditableNode: React.FC<EditableNodeProps> = ({
     value,
-    inputType,
+    options,
     editMode,
     changeValue,
     viewerFn
 }) => {
-    const [editedValue, setEditedValue] = useState(value);
+    const [editedValue, setEditedValue] = useState<SelectValue>(value);
 
-    const onChange = useCallback(
-        ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-            setEditedValue(target.value);
-        },
-        []
-    );
+    const onChange = useCallback((newValue: SelectValue) => {
+        setEditedValue(newValue);
+    }, []);
 
     const onSave = () => {
         changeValue(editedValue);
@@ -41,12 +38,11 @@ const EditableNode: React.FC<EditableNodeProps> = ({
                     'editable-node',
                     value !== editedValue && 'editable-node_changed'
                 )}>
-                <TextField
-                    type={inputType}
-                    placeholder={value}
+                <SelectField
+                    options={options}
                     value={editedValue}
+                    isMulti={true}
                     onChange={onChange}
-                    onEnter={onSave}
                 />
                 <IconButton Icon={SaveIcon} onClick={onSave} />
             </div>

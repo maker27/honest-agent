@@ -1,4 +1,9 @@
 import React from 'react';
+import { SingleValue } from 'react-select';
+
+import { SelectOption, SelectValue } from './components/InputField';
+import { companyTypes } from './constants';
+import { CompanyType } from './types';
 
 export function convertISOToDateString(timestamp: string): string {
     const date = new Date(timestamp);
@@ -41,4 +46,17 @@ export function phoneView(phone: string): string {
 
 export function emailView(email: string): React.ReactNode | string {
     return checkEmail(email) ? <a href={'mailto:' + email}>{email}</a> : email;
+}
+
+export function convertToSelectOptions(values: CompanyType[]): SelectOption[] {
+    return values.map(value => ({
+        value,
+        label: companyTypes[value]
+    }));
+}
+
+export function companyTypeView(value: SelectValue): string {
+    return Array.isArray(value)
+        ? value.map(({ label }) => label).join(', ')
+        : (value as SingleValue<SelectOption>)?.label ?? '';
 }

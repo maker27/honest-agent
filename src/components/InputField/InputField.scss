@@ -1,16 +1,21 @@
 @import "../../sass/_variables.scss";
 
-.text-field {
+.input-field {
     position: relative;
 
     &__input {
         width: 400px;
         height: 40px;
-        padding: 10px 12px;
         border: 1px solid #cdcdcd;
         border-radius: 2px;
+        padding: 10px 12px;
         font: 400 14px/20px $font-family;
         color: #3b3b3b;
+
+        &.input-field__select {
+            padding: 0;
+            height: auto;
+        }
 
         &::placeholder {
             display: block;
@@ -26,7 +31,7 @@
         }
 
         &:not(:placeholder-shown) {
-            + .text-field__label {
+            + .input-field__label {
                 top: 0;
                 opacity: 1;
             }
