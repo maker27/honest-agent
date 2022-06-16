@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import clsx from 'clsx';
 
 import './EditableNode.scss';
-import TextField, { CommonInputProps } from '../InputField';
+import InputField, { CommonInputProps } from '../InputField';
 import IconButton from '../IconButton';
 import { SaveIcon } from '../icons';
 
@@ -41,7 +41,7 @@ const EditableNode: React.FC<EditableNodeProps> = ({
                     'editable-node',
                     value !== editedValue && 'editable-node_changed'
                 )}>
-                <TextField
+                <InputField
                     type={inputType}
                     placeholder={value}
                     value={editedValue}
