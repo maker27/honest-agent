@@ -78,13 +78,21 @@ export const organizationSlice = createSlice({
             .addMatcher(
                 isAnyOf(
                     apiSlice.endpoints.getCompany.matchFulfilled,
-                    apiSlice.endpoints.editCompany.matchFulfilled,
-                    apiSlice.endpoints.deleteCompany.matchFulfilled
+                    apiSlice.endpoints.editCompany.matchFulfilled
                 ),
                 (state, action) => {
                     state.loading = false;
                     state.error = null;
-                    state.company = action.payload || null;
+                    state.company = action.payload;
+                }
+            )
+            .addMatcher(
+                apiSlice.endpoints.deleteCompany.matchFulfilled,
+                state => {
+                    state.loading = false;
+                    state.error = null;
+                    state.id = '';
+                    state.company = null;
                 }
             );
     }
