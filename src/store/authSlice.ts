@@ -8,6 +8,7 @@ interface AuthState {
     loading: boolean;
     error: string;
     login: string;
+    logout: boolean;
     token: string;
 }
 
@@ -15,6 +16,7 @@ const initialState: AuthState = {
     loading: false,
     error: '',
     login: '',
+    logout: false,
     token: ''
 };
 
@@ -27,6 +29,9 @@ export const authSlice = createSlice({
         },
         setToken(state, action: PayloadAction<string>) {
             state.token = action.payload;
+        },
+        setLogout(state, action: PayloadAction<boolean>) {
+            state.logout = action.payload;
         }
     },
     extraReducers: builder => {
@@ -53,12 +58,13 @@ export const authSlice = createSlice({
                         state.error = 'Ошибка получения токена с сервера';
                     }
                     state.loading = false;
+                    state.logout = false;
                 }
             );
     }
 });
 
-export const { setLogin, setToken } = authSlice.actions;
+export const { setLogin, setToken, setLogout } = authSlice.actions;
 
 export const selectAuth = (state: RootState): AuthState => state.auth;
 

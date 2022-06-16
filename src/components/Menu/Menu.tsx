@@ -12,8 +12,13 @@ import {
     SettingsIcon
 } from '../icons';
 import MenuItem from './MenuItem';
+import IconButton from '../IconButton';
 
-const Menu: React.FC<ClassNameProps> = ({ className }) => {
+interface MenuProps extends ClassNameProps {
+    onExit: () => void;
+}
+
+const Menu: React.FC<MenuProps> = ({ className, onExit }) => {
     return (
         <div className={clsx('menu', className)}>
             <div className="menu__upper">
@@ -36,7 +41,7 @@ const Menu: React.FC<ClassNameProps> = ({ className }) => {
                     <ChatIcon />
                 </MenuItem>
                 <MenuItem>
-                    <ExitIcon />
+                    <IconButton Icon={ExitIcon} onClick={onExit} />
                 </MenuItem>
             </div>
         </div>

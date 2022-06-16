@@ -8,8 +8,13 @@ import { Organization } from '../containers';
 import { selectCompanyId, setCompanyId } from '../store/organizationSlice';
 import { defaultCompanyId } from '../constants';
 import OrganizationsList from '../components/OrganizationsList';
+import { ClassNameProps } from '../types';
 
-const OrganizationPage: React.FC = () => {
+interface OrganizationPageProps extends ClassNameProps {
+    onExit: () => void;
+}
+
+const OrganizationPage: React.FC<OrganizationPageProps> = ({ onExit }) => {
     const companyId = useSelector(selectCompanyId);
 
     const dispatch = useDispatch();
@@ -21,7 +26,7 @@ const OrganizationPage: React.FC = () => {
 
     return (
         <div className="container">
-            <Menu className="container__menu" />
+            <Menu className="container__menu" onExit={onExit} />
             <Aside className="container__aside" />
             <div className="container__main">
                 {companyId ? (

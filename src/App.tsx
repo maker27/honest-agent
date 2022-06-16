@@ -8,7 +8,7 @@ import ErrorMessage from './components/ErrorMessage';
 import useAuth from './hooks/useAuth';
 
 const App: React.FC = () => {
-    const { loading, error, token } = useAuth();
+    const { loading, error, token, onExit } = useAuth();
 
     if (loading) {
         return <Loader />;
@@ -18,7 +18,7 @@ const App: React.FC = () => {
         return <AuthPage />;
     }
 
-    return <OrganizationPage />;
+    return <OrganizationPage onExit={onExit} />;
 };
 
 export default App;
