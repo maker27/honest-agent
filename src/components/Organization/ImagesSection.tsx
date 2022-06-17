@@ -19,7 +19,7 @@ const ImagesSection: React.FC<ImagesSectionProps> = ({
 }) => {
     return (
         <Section className="organization__section" title="Приложенные фото">
-            <ImagesList images={images} onImageClick={deleteImageByName} />
+            <ImagesList images={images} onCloseClick={deleteImageByName} />
             <ImageUploader
                 onBeforeUpload={onBeforeUpload}
                 setImage={setImage}
