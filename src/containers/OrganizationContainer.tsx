@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { ApiError, CompanyId } from '../types';
 import Organization from '../components/Organization';
@@ -6,6 +7,7 @@ import Loader from '../components/Loader';
 import ModalWindow from '../components/ModalWindow';
 import useModal from '../hooks/useModal';
 import useCompany from '../hooks/useCompany';
+import { setCompanyId } from '../store/organizationSlice';
 
 interface OrganizationContainerProps {
     companyId: CompanyId;
@@ -17,6 +19,12 @@ const OrganizationContainer: React.FC<OrganizationContainerProps> = ({
     const { isModalOpen, closeModal, openModal } = useModal();
 
     const [updatedError, setUpdatedError] = useState<ApiError>();
+
+    const dispatch = useDispatch();
+
+    const goBack = useCallback(() => {
+        dispatch(setCompanyId(''));
+    }, [dispatch]);
 
     const {
         isLoading,
@@ -46,6 +54,7 @@ const OrganizationContainer: React.FC<OrganizationContainerProps> = ({
                     onUpdate={onUpdate}
                     onEdit={onEdit}
                     onDelete={onDelete}
+                    goBack={goBack}
                 />
             )}
             <ModalWindow

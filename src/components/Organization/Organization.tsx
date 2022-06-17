@@ -23,6 +23,7 @@ interface OrganizationProps extends ClassNameProps {
     onUpdate: () => void;
     onEdit: (property: CompanyProperties, value: string | StringObject) => void;
     onDelete: () => void;
+    goBack: () => void;
 }
 
 const Organization: React.FC<OrganizationProps> = ({
@@ -30,7 +31,8 @@ const Organization: React.FC<OrganizationProps> = ({
     company,
     onUpdate,
     onEdit,
-    onDelete
+    onDelete,
+    goBack
 }) => {
     const { isModalOpen, closeModal, openModal } = useModal();
     const {
@@ -46,7 +48,7 @@ const Organization: React.FC<OrganizationProps> = ({
     return (
         <div className={clsx('organization', className)}>
             <div className="organization__header header">
-                <div className="header__link">
+                <div className="header__link" onClick={goBack}>
                     <BackIcon />К списку юридических лиц
                 </div>
                 <div className="header__buttons">
