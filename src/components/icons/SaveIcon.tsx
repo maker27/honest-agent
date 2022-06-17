@@ -3,6 +3,7 @@ import React from 'react';
 const SaveIcon: React.FC = () => {
     return (
         <svg
+            data-testid="save-icon"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 122.73 122.88"
             width="122"

@@ -3,6 +3,7 @@ import React from 'react';
 const CloseIcon: React.FC = () => {
     return (
         <svg
+            data-testid="close-icon"
             width="20"
             height="20"
             viewBox="0 0 20 20"

@@ -3,6 +3,7 @@ import React from 'react';
 const BackIcon: React.FC = () => {
     return (
         <svg
+            data-testid="back-icon"
             width="20"
             height="20"
             viewBox="0 0 20 20"

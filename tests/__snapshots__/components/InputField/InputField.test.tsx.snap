@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly type="date" 1`] = `
+<div
+  className="input-field"
+>
+  <input
+    className="input-field__input"
+    onChange={[MockFunction]}
+    onKeyDown={[Function]}
+    placeholder="placeholder"
+    type="date"
+    value="Test Value"
+  />
+  <span
+    className="input-field__label"
+  >
+    placeholder
+  </span>
+</div>
+`;
+
+exports[`renders correctly type="password" 1`] = `
+<div
+  className="input-field"
+>
+  <input
+    className="input-field__input"
+    onChange={[MockFunction]}
+    onKeyDown={[Function]}
+    placeholder="placeholder"
+    type="password"
+    value="Test Value"
+  />
+  <span
+    className="input-field__label"
+  >
+    placeholder
+  </span>
+</div>
+`;
+
+exports[`renders correctly type="text" 1`] = `
+<div
+  className="input-field"
+>
+  <input
+    className="input-field__input"
+    onChange={[MockFunction]}
+    onKeyDown={[Function]}
+    placeholder="placeholder"
+    type="text"
+    value="Test Value"
+  />
+  <span
+    className="input-field__label"
+  >
+    placeholder
+  </span>
+</div>
+`;

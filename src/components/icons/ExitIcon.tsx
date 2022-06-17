@@ -3,6 +3,7 @@ import React from 'react';
 const ExitIcon: React.FC = () => {
     return (
         <svg
+            data-testid="exit-icon"
             width="20"
             height="20"
             viewBox="0 0 20 20"

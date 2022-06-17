@@ -3,6 +3,7 @@ import React from 'react';
 const DeleteIcon: React.FC = () => {
     return (
         <svg
+            data-testid="delete-icon"
             width="20"
             height="20"
             viewBox="0 0 20 20"

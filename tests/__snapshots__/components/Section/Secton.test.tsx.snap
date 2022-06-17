@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with text title 1`] = `
+<div
+  className="section"
+>
+  <div
+    className="section__title"
+  >
+    Test Button
+  </div>
+</div>
+`;
+
+exports[`renders correctly with title as Component 1`] = `
+<div
+  className="section"
+>
+  <div
+    className="section__title"
+  >
+    <h1>
+      Title
+    </h1>
+  </div>
+</div>
+`;

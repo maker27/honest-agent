@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with 1 button 1`] = `
+<div
+  className="modal__window"
+>
+  <div
+    className="modal__header"
+  >
+    Modal title
+  </div>
+  <div
+    className="modal__content"
+  />
+  <div
+    className="modal__buttons"
+  >
+    <div
+      className="modal__button modal__button_ok"
+      onClick={[MockFunction]}
+    >
+      ОК
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with 2 buttons 1`] = `
+<div
+  className="modal__window"
+>
+  <div
+    className="modal__header"
+  >
+    Modal title
+  </div>
+  <div
+    className="modal__content"
+  />
+  <div
+    className="modal__buttons"
+  >
+    <div
+      className="modal__button modal__button_cancel"
+      onClick={[MockFunction]}
+    >
+      Отмена
+    </div>
+    <div
+      className="modal__button modal__button_accept"
+      onClick={[Function]}
+    >
+      Action
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<dl
+  className="records"
+>
+  <div
+    className="record"
+  >
+    <dt
+      className="record__name"
+    >
+      first
+    </dt>
+    <dd
+      className="record__details"
+    >
+      <span>
+        First Value
+      </span>
+    </dd>
+  </div>
+  <div
+    className="record"
+  >
+    <dt
+      className="record__name"
+    >
+      second
+    </dt>
+    <dd
+      className="record__details"
+    >
+      <span>
+        Second Value
+      </span>
+    </dd>
+  </div>
+  <div
+    className="record"
+  >
+    <dt
+      className="record__name"
+    >
+      third
+    </dt>
+    <dd
+      className="record__details"
+    >
+      <span>
+        Third Value
+      </span>
+    </dd>
+  </div>
+</dl>
+`;

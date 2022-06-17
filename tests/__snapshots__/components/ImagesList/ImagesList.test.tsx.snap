@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="images-list"
+>
+  <div
+    className="images-list__item image"
+  >
+    <div
+      className="image__view"
+    >
+      <img
+        alt="1.jpg"
+        onClick={[Function]}
+        src="/preview/1.jpg"
+      />
+      <div
+        className="image__remove"
+      >
+        <span
+          className="icon-button"
+        >
+          <svg
+            data-testid="close-icon"
+            fill="none"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#D95151"
+              height="20"
+              rx="10"
+              width="20"
+            />
+            <path
+              clipRule="evenodd"
+              d="M5.19995 6.07226L9.1277 10L5.19995 13.9278L6.0722 14.8L9.99995 10.8723L13.9277 14.8L14.8 13.9278L10.8722 10L14.8 6.07226L13.9277 5.20001L9.99995 9.12776L6.0722 5.20001L5.19995 6.07226Z"
+              fill="#F7F7F7"
+              fillRule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div
+      className="image__info"
+    >
+      <div
+        className="image__name"
+      >
+        1.jpg
+      </div>
+      <div
+        className="image__date"
+      >
+        11 июня 2018
+      </div>
+    </div>
+  </div>
+  <div
+    className="images-list__item image"
+  >
+    <div
+      className="image__view"
+    >
+      <img
+        alt="2.jpg"
+        onClick={[Function]}
+        src="/preview/2.jpg"
+      />
+      <div
+        className="image__remove"
+      >
+        <span
+          className="icon-button"
+        >
+          <svg
+            data-testid="close-icon"
+            fill="none"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#D95151"
+              height="20"
+              rx="10"
+              width="20"
+            />
+            <path
+              clipRule="evenodd"
+              d="M5.19995 6.07226L9.1277 10L5.19995 13.9278L6.0722 14.8L9.99995 10.8723L13.9277 14.8L14.8 13.9278L10.8722 10L14.8 6.07226L13.9277 5.20001L9.99995 9.12776L6.0722 5.20001L5.19995 6.07226Z"
+              fill="#F7F7F7"
+              fillRule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div
+      className="image__info"
+    >
+      <div
+        className="image__name"
+      >
+        2.jpg
+      </div>
+      <div
+        className="image__date"
+      >
+        11 июня 2018
+      </div>
+    </div>
+  </div>
+  <div
+    className="images-list__fullscreen"
+    onClick={[Function]}
+  >
+    <img
+      alt="Fullscreen Image"
+      src=""
+    />
+  </div>
+</div>
+`;
