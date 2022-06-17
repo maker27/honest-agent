@@ -9,6 +9,7 @@ import { selectCompanyId, setCompanyId } from '../store/organizationSlice';
 import { defaultCompanyId } from '../constants';
 import OrganizationsList from '../components/OrganizationsList';
 import { ClassNameProps } from '../types';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 interface OrganizationPageProps extends ClassNameProps {
     onExit: () => void;
@@ -29,11 +30,13 @@ const OrganizationPage: React.FC<OrganizationPageProps> = ({ onExit }) => {
             <Menu className="container__menu" onExit={onExit} />
             <Aside className="container__aside" />
             <div className="container__main">
-                {companyId ? (
-                    <Organization companyId={companyId} />
-                ) : (
-                    <OrganizationsList />
-                )}
+                <ErrorBoundary>
+                    {companyId ? (
+                        <Organization companyId={companyId} />
+                    ) : (
+                        <OrganizationsList />
+                    )}
+                </ErrorBoundary>
             </div>
         </div>
     );
