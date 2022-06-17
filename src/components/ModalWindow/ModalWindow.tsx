@@ -1,7 +1,7 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import './ModalWindow.scss';
-import clsx from 'clsx';
 
 export interface ModalWindowProps {
     title: string;
