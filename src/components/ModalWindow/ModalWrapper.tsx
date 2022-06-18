@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import './ModalWrapper.scss';
 import ModalWindow, { ModalWindowProps } from './ModalWindow';
@@ -10,10 +11,11 @@ interface ModalWrapperProps extends ModalWindowProps {
 const ModalWrapper: React.FC<ModalWrapperProps> = ({ show, ...props }) => {
     if (!show) return null;
 
-    return (
+    return ReactDOM.createPortal(
         <div className="modal">
             <ModalWindow {...props} />
-        </div>
+        </div>,
+        document.body
     );
 };
 
