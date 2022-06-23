@@ -45,7 +45,7 @@ const useCompany = (companyId: CompanyId): UseCompanyResult => {
 
     useEffect(() => {
         onUpdate();
-    }, [companyId, loadCompany, onUpdate]);
+    }, [onUpdate]);
 
     const [editCompany] = useEditCompanyMutation();
 
